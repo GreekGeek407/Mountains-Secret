@@ -1,0 +1,75 @@
+Quarry
+Following rumors of a huge discovery at an excavation site, you 
+finally arrive at the rumored quarry. In the distance, you can 
+see tunnels dug into the side of the mountain with a steady 
+stream of workers hauling chunks of stone. You're more concerned 
+with what's right in front of you: a suspiciously flat section
+of rock with an old leather satchel resting on the ground. 
+
+You will eventually open the exit down into the temple. 
+#
+Antechamber
+Climbing down the ladder, you emerge into a room made from 
+beautifully carved polished stone. The room clearly serves 
+as an antechamber for whatever this structure is. Other than 
+the ladder you used, the central pillar is covered in a 
+mosaic depicting the elements: fire on the south side, air 
+on the west side, water to the north, and earth to the east. 
+
+A doorway leads out of the room on each of the four cardinal 
+directions.
+#
+Outer Cave
+This cave has a window carved into the rock, cleverly 
+crafted to let light in without being visible from the outside. 
+A beam of sunlight streams in, forming a bright spot on the floor. 
+You notice a beautiful painting depicting the moon, sun, and stars 
+on one of the walls. 
+
+The room has one doorway, leading east back to the antechamber.
+#
+Torch Room
+This room is warmer than the rest of the temple. The floor 
+is covered in a massive charcoal etching of a flame, and four  
+unlit torches hang in sconces, one on each of the square room's 
+four walls. 
+
+The room has one doorway on the north wall, leading back to 
+the antechamber.
+#
+Reflecting Pool
+The air in this room is cool, and the stones on the floor are 
+slightly damp. In the center of the room, a large circular pool 
+of water sits perfectly still. You can see the room vividly reflected 
+on the surface of the water, though you can't make out any details 
+without a closer look. 
+
+The door on the south wall leads back to the antechamber, 
+and you will eventually open the way down to the submerged vault. 
+#
+Submerged Vault
+The vault is surprisingly dry for having been under a pool. 
+Resting on a block of clay in front of you is a beautiful white 
+rose, somehow preserved since whenever this temple was abandoned. 
+
+You can climb the ladder back up to the pool room.
+#
+Shrine
+A massive statue of a regal figure you don't recognize dominates this room. 
+The statue holds a rose in its outstretched hand. At the statue's feet, an 
+altar is adorned with what you can only assume are holy symbols. As you enter 
+the room, what initially appears to be a smaller statue steps away from the 
+wall and positions itself in front of the rear exit. 
+
+You can exit west back to the antechamber, or you can talk 
+to the golem and eventually proceed east to the treasure room.
+#
+Treasure Room
+The room at the center of the temple is beautiful, opulent without being 
+garish. A chest sits in front of you with something engraved on a plaque 
+(there will eventually be a super cool riddle here). Inside the chest, the 
+temple's treasure waits for you. 
+
+If for some reason you want to leave without the treasure, you can 
+exit west back to the shrine.
+#
