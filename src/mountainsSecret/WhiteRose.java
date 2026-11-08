@@ -10,7 +10,7 @@ public class WhiteRose extends Item {
 	
 	@Override
 	public void use() {
-		if (Game.getCurrentRoom().getName().equals("Treasure Room")) {
+		if (Game.getCurrentRoom().getName().equals("Shrine")) {
 			if (!gaveRose) {
 				Game.print("You present the rose to the golem. The golem's sculpted eyes "
 						+ "light up, and it steps away from the door behind it.");
