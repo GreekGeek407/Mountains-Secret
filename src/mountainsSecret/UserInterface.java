@@ -23,7 +23,7 @@ public class UserInterface {
 
     private void createUI() {
         // 1. Setup the Main Window Frame
-        window = new JFrame("Swipe Dad's Car");
+        window = new JFrame("The Mountain's Secret");
         window.setSize(800, 600);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.getContentPane().setBackground(backgroundColor);

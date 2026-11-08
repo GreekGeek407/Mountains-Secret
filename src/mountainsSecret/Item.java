@@ -56,6 +56,10 @@ public class Item implements Serializable {
 		Game.print("There's nothing to extinguish on the " + name + "!");
 	}
 	
+	public boolean isLit() {
+		return false;
+	}
+	
 	public String toString() {
 		return name;
 	}

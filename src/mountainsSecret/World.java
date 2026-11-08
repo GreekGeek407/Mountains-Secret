@@ -14,13 +14,13 @@ public class World {
 		Room shrine = new Room("Shrine");
 		Room treasureRoom = new Room("Treasure Room");
 		
-		antechamber.setLocked(true);
+		//antechamber.setLocked(true);
 		treasureRoom.setLocked(true);
 		
-		Item matches = new Item("matches", false);
-		Item mirror = new Item("mirror", false);
-		Item whiteRose = new Item("whiterose", false);
-		Item emerald = new Item("emerald", false);
+		//Item matches = new Item("matches", false);
+		//Item mirror = new Item("mirror", false);
+		//Item whiteRose = new Item("whiterose", false);
+		//Item emerald = new Item("emerald", false);
 		
 		quarry.addExit(antechamber, 5);
 		antechamber.addExit(shrine, 0);
@@ -36,10 +36,10 @@ public class World {
 		shrine.addExit(treasureRoom, 0);
 		shrine.addExit(antechamber, 1);
 		treasureRoom.addExit(shrine, 1);
-		antechamber.addItem(matches);
-		torchRoom.addItem(mirror);
-		submergedVault.addItem(whiteRose);
-		treasureRoom.addItem(emerald);
+		antechamber.addItem(new Matchbook());
+		//torchRoom.addItem(mirror);
+		submergedVault.addItem(new WhiteRose());
+		treasureRoom.addItem(new Chest());
 		
 		Torch northTorch = new Torch("north");
 		Torch eastTorch = new Torch("east");
@@ -49,6 +49,9 @@ public class World {
 		torchRoom.addItem(eastTorch);
 		torchRoom.addItem(southTorch);
 		torchRoom.addItem(westTorch);
+		// eventually the antechamber will start locked, probably involves NPCs
+		// antechamber.setLocked(true);
+		submergedVault.setLocked(true);
 		
 		return quarry;
 	}

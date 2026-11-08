@@ -16,7 +16,7 @@ import javax.swing.*;
 public class Game {
 	
 	public static HashMap<String, String> roomDescriptions = new HashMap<>();
-	public static ArrayList<Room> rooms = new ArrayList<>();
+	public static HashMap<String, Room> rooms = new HashMap<>();
 	private static Room currentRoom = World.buildWorld();
 	private static ArrayList<Item> inventory = new ArrayList<>();
 	private static UserInterface ui;
@@ -49,7 +49,7 @@ public class Game {
 		File saveFile = new File("save.sav");
 		try {
 			ObjectInputStream inStream = new ObjectInputStream(new FileInputStream(saveFile));
-			rooms = (ArrayList<Room>)inStream.readObject();
+			rooms = (HashMap<String, Room>)inStream.readObject();
 			currentRoom = (Room)inStream.readObject();
 			inventory = (ArrayList<Item>)inStream.readObject();
 			inStream.close();
@@ -131,8 +131,31 @@ public class Game {
 				itemName = "";
 				for (int i = 1; i < fullCommand.length; i++) {
 					itemName += fullCommand[i];
+					if (i < fullCommand.length - 1)
+						itemName += " ";
 				}
-				readItem(itemName);
+				if (itemName.equals("torch")) {
+					Game.print("Specify which torch to light (north, south, east, or west).");
+					break;
+				}
+				lightItem(itemName);
+				break;
+			case "extinguish":
+				if (fullCommand.length < 2) {
+					print("Specify what you're extinguishing!");
+					break;
+				}
+				itemName = "";
+				for (int i = 1; i < fullCommand.length; i++) {
+					itemName += fullCommand[i];
+					if (i < fullCommand.length - 1)
+						itemName += " ";
+				}
+				if (itemName.equals("torch")) {
+					Game.print("Specify which torch to extinguish (north, south, east, or west).");
+					break;
+				}
+				extinguishItem(itemName);
 				break;
 			case "exit":
 				print("Come back soon!");
@@ -299,8 +322,11 @@ public class Game {
 	public static void lightItem(String itemName) {
 		Item i = currentRoom.getItem(itemName);
 		if (i != null) {
-			if (getItem("matches") != null) {
+			if (getItem("matchbook") != null) {
 				i.light();
+				if (rooms.get("Torch Room").getItem("mirror") == null && getItem("mirror") == null) {
+					checkTorchPuzzle();
+				}
 			}
 			else
 				print("You have nothing to light a fire.");
@@ -310,6 +336,30 @@ public class Game {
 			print("There is no " + itemName + " to light.");
 	}
 	
+	public static void extinguishItem(String itemName) {
+		Item i = currentRoom.getItem(itemName);
+		if (i != null) {
+			i.extinguish();
+			if (rooms.get("Torch Room").getItem("mirror") == null && getItem("mirror") == null) {
+				checkTorchPuzzle();
+			}
+		}	
+		else
+			print("There is no " + itemName + " to extinguish.");
+	}
+	
+	public static void checkTorchPuzzle() {
+		if (currentRoom.getName().equals("Torch Room")) { // this is a mess but it works
+			if (currentRoom.getItem("north torch").isLit() && 
+				currentRoom.getItem("west torch").isLit() && 
+				!currentRoom.getItem("south torch").isLit() && 
+				!currentRoom.getItem("east torch").isLit()) {
+				rooms.get("Torch Room").addItem(new Mirror());
+				Game.print("As you step back from the torch, a small tile slides "
+						+ "away from the wall, revealing a sparkling hand mirror.");
+			}
+		}
+	}
 	public static void loadRoomDescriptions() {
 		try {
 			Scanner fileScan = new Scanner(new File("room_descriptions.txt"));

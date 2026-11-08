@@ -17,7 +17,7 @@ public class Room implements Serializable {
 		locked = false;
 		exits = new Room[6];
 		roomItems = new HashMap<>();
-		Game.rooms.add(this);
+		Game.rooms.put(this.getName(), this);
 	}
 	
 	// Get methods

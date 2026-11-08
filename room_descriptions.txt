@@ -3,7 +3,7 @@ Following rumors of a huge discovery at an excavation site, you
 finally arrive at the rumored quarry. In the distance, you can 
 see tunnels dug into the side of the mountain with a steady 
 stream of workers hauling chunks of stone. You're more concerned 
-with what's right in front of you: a suspiciously flat section
+with what's right in front of you: a suspiciously flat section 
 of rock with an old leather satchel resting on the ground. 
 
 You will eventually open the exit down into the temple. 
