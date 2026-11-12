@@ -79,6 +79,7 @@ public class Game {
 					.split(" ");
 			String command = fullCommand[0];
 			String itemName;
+			String npcName;
 			switch (command) {
 			case "east", "west", "north", "south", "up", "down":
 				move(command);
@@ -185,6 +186,18 @@ public class Game {
 					//	itemName += " ";
 				}
 				useItem(itemName);
+				break;
+			case "talk":
+				if (fullCommand.length < 2) {
+					print("Specify the name of who you're talking to.");
+					break;
+				}
+				npcName = fullCommand[1];
+				if (currentRoom.getNPC() != null && currentRoom.getNPC().getName().equals(npcName)) {
+					currentRoom.getNPC().talk();
+				}
+				else
+					Game.print("There's no " + npcName + " in this room.");
 				break;
 			case "i":
 				if (inventory.size() > 0) {

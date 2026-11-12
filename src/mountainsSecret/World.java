@@ -53,6 +53,8 @@ public class World {
 		// antechamber.setLocked(true);
 		submergedVault.setLocked(true);
 		
+		shrine.setNPC(new Golem());
+		
 		return quarry;
 	}
 	

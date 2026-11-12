@@ -9,7 +9,8 @@ public class Room implements Serializable {
 	private String name; // Room name
 	private boolean locked;
 	private Room[] exits; //array of all possible exit rooms
-	private HashMap<String, Item> roomItems;
+	private HashMap<String, Item> roomItems; // map of all items in the room
+	private NPC roomNPC;
 	
 	// Constructor method
 	public Room(String n) {
@@ -37,6 +38,9 @@ public class Room implements Serializable {
 		return roomItems.get(itemName);
 	}
 	
+	public NPC getNPC() {
+		return roomNPC;
+	}
 	public boolean isLocked() {
 		return locked;
 	}
@@ -63,6 +67,10 @@ public class Room implements Serializable {
 	
 	public void removeItem(String itemName) {
 		roomItems.remove(itemName);
+	}
+	
+	public void setNPC(NPC npc) {
+		roomNPC = npc;
 	}
 	
 	// toString method
