@@ -34,4 +34,8 @@ public class NPC {
 		return Integer.parseInt(input);	
 	}
 	
+	public void give(Item i) {
+		Game.print(name + " has no use for the " + i.getName() + ".");
+	}
+	
 }

@@ -10,6 +10,17 @@ public class Golem extends NPC {
 	}
 	
 	@Override
+	public void give(Item i) {
+		if (i.getName().equals("whiterose")) {
+			Game.removeInventoryItem("whiterose");
+			say("It is truly beautiful, isn't it? You can clearly be trusted with the treasure. I will step aside.");
+		}
+		else
+			say("I have no use for your trinkets.");
+		
+	}
+	
+	@Override
 	public void talk() {
 		switch(dialogState) {
 			case 0:
@@ -222,6 +233,6 @@ public class Golem extends NPC {
 	
 	public void conversation10() {
 		say("My creators' tale is a sad one, but all the more worth telling because of it. One preserved rose from their grotto is"
-				+ "said to rest in this temple somewhere. I would very much like to see it.");
+				+ " said to rest in this temple somewhere. I would very much like to see it.");
 	}
 }

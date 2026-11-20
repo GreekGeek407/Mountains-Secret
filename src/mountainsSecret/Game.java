@@ -3,6 +3,7 @@ package mountainsSecret;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -274,6 +275,14 @@ public class Game {
 	
 	public static void addInventoryItem(Item i) {
 		inventory.add(i);
+	}
+	
+	public static void removeInventoryItem(String itemName) {
+		Iterator<Item> it = inventory.iterator();
+		while (it.hasNext()) {
+			if (it.next().getName().equals(itemName))
+				it.remove();
+		}
 	}
 	
 	public static Item getItem(String itemName) {
