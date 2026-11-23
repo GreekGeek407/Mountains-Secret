@@ -1,0 +1,40 @@
+10
+CONVO 1
+Hello! This is conversation 1. Where do you want to go?
+Conversation 2>2You're off to conversation 2!
+Conversation 5>5You're off to conversation 5!
+Conversation 8>8You're off to conversation 8!
+#
+CONVO 2
+This is conversation 2. Where to?
+Conversation 3>3You're off to conversation 3!
+Conversation 4>4You're off to conversation 4!
+#
+CONVO 3 - END
+This is conversation 3. The end!
+#
+CONVO 4 - END
+This is conversation 4. The end!
+#
+CONVO 5
+This is conversation 5. Where to?
+Conversation 6>6You're off to conversation 6!
+Conversation 7>7You're off to conversation 7!
+#
+CONVO 6 - END
+This is conversation 6. The end!
+#
+CONVO 7 - END
+This is conversation 7. The end!
+#
+CONVO 8
+This is conversation 8. Where to?
+Conversation 9>9You're off to conversation 9!
+Conversation 10>10You're off to conversation 10!
+#
+CONVO 9 - END
+This is conversation 9. The end!
+#
+CONVO 10 - END
+This is conversation 10. The end!
+#
