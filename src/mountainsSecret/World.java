@@ -54,6 +54,7 @@ public class World {
 		submergedVault.setLocked(true);
 		
 		shrine.setNPC(new Golem());
+		//quarry.setNPC(new TestNPC());
 		
 		return quarry;
 	}

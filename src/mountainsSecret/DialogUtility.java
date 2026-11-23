@@ -2,17 +2,10 @@ package mountainsSecret;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
-import java.util.TreeMap;
 
 public class DialogUtility {
 
@@ -33,6 +26,12 @@ public class DialogUtility {
 			BufferedWriter writer = new BufferedWriter(new FileWriter(output));
 			Scanner fileScan = new Scanner(new File(input));
 			int numConvos = Integer.parseInt(fileScan.nextLine());
+			writer.write("@Override\npublic void talk() {\n\tswitch(dialogState) {\n\t\t");
+			for (int i = 0; i < numConvos; i++) {
+				writer.write("case " + (i+1) + ":\n\t\t\t");
+				writer.write("conversation" + (i+1) + "();\n\t\t\tbreak;\n");
+			}
+			writer.write("\t}\n}");
 			for (int i = 0; i < numConvos; i++) {
 				HashMap<Integer, String> targets = new HashMap<>();
 				boolean hasResponses = !fileScan.nextLine().contains("END");
@@ -87,12 +86,7 @@ public class DialogUtility {
 					fileScan.nextLine();
 				writer.write("}\n");
 			} // end for loop
-			writer.write("public void talk() {\n\tswitch(dialogState) {\n\t\t");
-			for (int i = 0; i < numConvos; i++) {
-				writer.write("case " + (i+1) + ":\n\t\t\t");
-				writer.write("conversation" + (i+1) + "();\n\t\t\tbreak;\n");
-			}
-			writer.write("\t}\n}");
+			
 			writer.close();
 			fileScan.close();
 		} catch(IOException e) {
